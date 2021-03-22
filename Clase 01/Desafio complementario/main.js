@@ -18,11 +18,9 @@ let confirmName = prompt(
 
 let date = new Date();
 
-if (
-  confirmName.toLowerCase() === "si" ||
-  confirmName.toLowerCase() === "yes" ||
-  confirmName.toLowerCase() === "true"
-) {
+const validYes = ['si','yes','true','se','sep','sip'];
+
+if ( validYes.includes( confirmName.toLowerCase() ) {
   let userResponse = prompt(
     `aaah excelente! y naciste en ${date.getFullYear() - userAge}??`
   );
