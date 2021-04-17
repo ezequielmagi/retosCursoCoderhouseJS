@@ -1,8 +1,16 @@
-function newEmpleado(legajo, apellido, nombre, puesto) {
-  this.legajo = legajo;
-  this.apellido = apellido;
-  this.nombre = nombre;
-  this.puesto = puesto;
+class Empleado {
+  constructor(legajo, apellido, nombre, puesto) {
+    this.legajo = legajo;
+    this.apellido = apellido.toLowerCase();
+    this.nombre = nombre.toLowerCase();
+    this.puesto = puesto.toLowerCase();
+  }
+
+  saludoEmpleado() {
+    console.log(
+      `Hola! soy ${this.nombre} y soy feliz cumpliendo el rol de ${this.puesto}`
+    );
+  }
 }
 
 function newVenta(factura, fecha, cliente, vendedor, detalle) {
@@ -20,12 +28,25 @@ function newDetalle(articulo, precio, cantidad) {
 
 let listadoDeVentas = [];
 let listaDeEmpleados = [];
+let detalleDeVenta = [];
 let detalleFactura = [];
+let facturaVenta = [];
+
+// permite cargar nuevas ventas
 const altaVenta = () => {
+  let resp;
+
   let numFactura = parseInt(prompt("Ingrese el numero de factura: "));
   let fechaFactura = prompt("ingrese la fecha de hoy: ");
   let datosCliente = prompt("ingrese los datos del cliente:");
   let datosVendedor = prompt("ingrese el nombre del vendedor");
+
+  detalleDeVenta = new newVenta(
+    numFactura,
+    fechaFactura,
+    datosCliente,
+    datosVendedor
+  );
 
   do {
     let detalleArticulo = prompt("ingrese el producto:");
@@ -36,42 +57,56 @@ const altaVenta = () => {
       prompt("ingrese la cantidad vendida del articulo:")
     );
 
-    let detalle = new newDetalle(
+    const detalle = new newDetalle(
       detalleArticulo,
       detallePrecioUnitario,
       detalleCantidadArticulo
     );
     detalleFactura.push(detalle);
-    prompt("desea agregar otro producto a la factura? si o no:");
-  } while (resp === "no");
+
+    resp = prompt("desea agregar otro producto a la factura? si o no:");
+  } while (resp === "si");
+
+  facturaVenta.push(detalleDeVenta, detalleFactura);
+
+  listadoDeVentas.push(facturaVenta);
 };
 
+// permite cargar nuevos empleados
 const altaEmpleado = () => {
   let legajo = parseInt(prompt("Ingrese el legajo del nuevo empleado: "));
   let apellido = prompt("Ingrese el apellido del nuevo empleado: ");
   let nombre = prompt("Ingrese el nombre del nuevo empleado: ");
   let puesto = prompt("Ingrese el puesto del nuevo empleado: ");
 
-  const empleado = new newEmpleado(legajo, apellido, nombre, puesto);
+  const empleado = new Empleado(legajo, apellido, nombre, puesto);
+
+  empleado.saludoEmpleado();
 
   listaDeEmpleados.push(empleado);
 };
 
+// permite listar los empleados previamente cargados
 const listarEmpleados = () => {
   console.log("Estos son los empleados en plantilla:");
-  for (i = 0; i < listaDeEmpleados.length; i++) {
-    let plantilla = listaDeEmpleados[i];
-    console.log(plantilla);
-  }
+  listaDeEmpleados.forEach((empleado) => {
+    console.log(empleado);
+  });
 };
 
+// funcion que sirve para buscar empleados por legajo
+const hallaEmpleado = (buscaEmpleado) => {
+  const empleado = listaDeEmpleados.find(
+    (empleado) => empleado.legajo === buscaEmpleado
+  );
+  return empleado;
+};
+
+// permite eliminar un empleado de la lista
 const bajaEmpleado = () => {
   let buscaEmpleado = parseInt(prompt("ingrese el legajo del empleado"));
 
-  const hallaEmpleado = () =>
-    listaDeEmpleados.find((empleado) => empleado.legajo === buscaEmpleado);
-
-  let empleadoBuscado = hallaEmpleado();
+  let empleadoBuscado = hallaEmpleado(buscaEmpleado);
   let nombreParaMostrar =
     empleadoBuscado.apellido + " " + empleadoBuscado.nombre;
   let resp = prompt(
@@ -86,4 +121,5 @@ const bajaEmpleado = () => {
   }
 };
 
+// actualizar datos de empleados
 const modEmpleado = () => {};
