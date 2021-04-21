@@ -13,14 +13,14 @@ class Empleado {
   }
 }
 
-function newVenta(factura, fecha, cliente, vendedor, detalle) {
+function NewVenta(factura, fecha, cliente, vendedor, detalle) {
   this.factura = factura;
   this.fecha = fecha;
   this.cliente = cliente;
   this.vendedor = vendedor;
   this.detalle = detalle;
 }
-function newDetalle(articulo, precio, cantidad) {
+function NewDetalle(articulo, precio, cantidad) {
   this.articulo = articulo;
   this.precio = precio;
   this.cantidad = cantidad;
@@ -41,7 +41,7 @@ const altaVenta = () => {
   let datosCliente = prompt("ingrese los datos del cliente:");
   let datosVendedor = prompt("ingrese el nombre del vendedor");
 
-  detalleDeVenta = new newVenta(
+  detalleDeVenta = new NewVenta(
     numFactura,
     fechaFactura,
     datosCliente,
@@ -57,7 +57,7 @@ const altaVenta = () => {
       prompt("ingrese la cantidad vendida del articulo:")
     );
 
-    const detalle = new newDetalle(
+    const detalle = new NewDetalle(
       detalleArticulo,
       detallePrecioUnitario,
       detalleCantidadArticulo
