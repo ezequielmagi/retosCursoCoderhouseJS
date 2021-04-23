@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+<h1>Local Storage && manejo del DOM</h1>
+</header>
+<main>
+
+<div class="userForm">
+
+<form id="formUsers">
+    <label for="name">Ingrese el nombre:</label>
+    <input type="text" id="names" autocomplete="off">
+    <label for="country">ingrese el pais:</label>
+    <input type="text" id="countrys" autocomplete="off">
+    <label for="userName">Ingrese el nombre de usuario:</label>
+    <input type="text" id="userNames" autocomplete="off">
+    <label for="userPass">ingrese el password:</label>
+    <input type="password" id="userPasss" autocomplete="off">
+
+    <button id="enviar">Enviar</button>
+
+</form>
+
+<form id="showUsers">
+<button id="listar">Mostrar Ocultar Usuarios Registrados</button>
+</form>
+
+</div>
+<div class="resultados">
+
+<div id="showCount">
+    <h2>Usuarios Registrados al momento: <span id="userCount"></span></h2>
+</div>
+<ul id="listUsersRegistered" display="block"></ul>
+</main>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
