@@ -1,70 +1,110 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    height: 10vh;
-    background-color: chocolate;
-    margin-bottom: 15px;
+:root {
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
 }
 
-#formUsers{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    font-size: 1.5rem;
-    margin-left: 50px;
+header {
+  height: 10vh;
+  background-color: #00587a;
+  margin-bottom: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
 }
 
-#formUsers label{
-    margin-bottom: 15px;
-
-
+header h1 {
+  margin-left: 100px;
 }
 
-#formUsers input{
-    margin-bottom: 20px;
-    font-size: 1.5rem;
+body {
+  background-color: #008891;
+  height: 100vh;
 }
 
-#enviar{
-    width: 50%;
-    height: 50px;
-    font-size: 1.5rem;
-    align-self: flex-end;
+#formUsers {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  font-size: 1.5rem;
+  margin: 50px 50px;
 }
 
-#listUsersRegistered{
-    background-color: cadetblue;
-    height: 100%;
+#formUsers input {
+  border: none;
+  background-color: #008891;
+  color: yellow;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  border-bottom: solid black;
+  padding: 15px;
+  outline: none;
 }
 
-#listUsersRegistered  li{
-    color: aliceblue;
-    font-size: 1.5rem;
-    list-style: none;
-    margin: 3px auto;
-
+::placeholder {
+  color: white;
 }
 
-main{
-    display: flex;
-    justify-content: space-around;
+#enviar {
+  cursor: pointer;
+  color: white;
+  background-color: #70af85;
+  border: none;
+  margin-top: 30px;
+  width: 50%;
+  height: 50px;
+  font-size: 1.5rem;
+  align-self: flex-end;
+  border-radius: 50px;
 }
 
-.userForm{
-    width: 50%;
+#listUsersRegistered {
+  height: 100%;
+  margin-top: 50px;
 }
 
-#showUsers{
-    padding: 20px;
-    margin: 10px;
+#listUsersRegistered li {
+  color: aliceblue;
+  font-size: 1.5rem;
+  list-style: none;
+  margin: 10px auto;
+  background-color: tomato;
+  padding: 10px;
+  border-radius: 20px;
 }
 
-#showUsers button{
-    padding: 10px;
-    border-radius: 20px;
-    cursor: pointer;
+main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.userForm {
+  width: 50%;
+}
+
+#showUsers button {
+  cursor: pointer;
+  color: white;
+  background-color: #70af85;
+  border: none;
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 70px;
+  font-size: 1.5rem;
+  align-self: flex-end;
+  border-radius: 50px;
+}
+
+#showCount {
+  background-color: snow;
+  margin-top: -15px;
+  padding: 25px;
 }
