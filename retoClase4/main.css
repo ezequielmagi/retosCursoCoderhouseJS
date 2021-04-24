@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
+}
+
+header {
+  height: 10vh;
+  background-color: #00587a;
+  margin-bottom: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+header h1 {
+  margin-left: 100px;
+}
+
+body {
+  background-color: #008891;
+  height: 100vh;
+}
+
+#formUsers {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  font-size: 1.5rem;
+  margin: 50px 50px;
+}
+
+#formUsers input {
+  border: none;
+  background-color: #008891;
+  color: yellow;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  border-bottom: solid black;
+  padding: 15px;
+  outline: none;
+}
+
+::placeholder {
+  color: white;
+}
+
+#enviar {
+  cursor: pointer;
+  color: white;
+  background-color: #70af85;
+  border: none;
+  margin-top: 30px;
+  width: 50%;
+  height: 50px;
+  font-size: 1.5rem;
+  align-self: flex-end;
+  border-radius: 50px;
+}
+
+#listUsersRegistered {
+  height: 100%;
+  margin-top: 50px;
+}
+
+#listUsersRegistered li {
+  color: aliceblue;
+  font-size: 1.5rem;
+  list-style: none;
+  margin: 10px auto;
+  background-color: tomato;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.userForm {
+  width: 50%;
+}
+
+#showUsers button {
+  cursor: pointer;
+  color: white;
+  background-color: #70af85;
+  border: none;
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 70px;
+  font-size: 1.5rem;
+  align-self: flex-end;
+  border-radius: 50px;
+}
+
+#showCount {
+  background-color: snow;
+  margin-top: -15px;
+  padding: 25px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+<h1>Local Storage && manejo del DOM</h1>
+<form id="showUsers">
+<button id="listar">Mostrar Ocultar Usuarios Registrados</button>
+</form>
+</header>
+<main>
+
+<div class="userForm">
+
+<form id="formUsers">
+    
+    <input type="text" id="names" autocomplete="off" placeholder="Ingrese el nombre: ej.: Neid">
+    <input type="text" id="countrys" autocomplete="off" placeholder="ingrese el pais: ej.: Strapoldavia del Oeste">
+    <input type="text" id="userNames" autocomplete="off" placeholder="Ingrese el nombre de usuario: ej.: sex machine">
+    <input type="password" id="userPasss" autocomplete="off" placeholder="ingrese el password: ej.: contraseña">
+
+    <button id="enviar">Enviar</button>
+
+</form>
+
+<!-- <form id="showUsers">
+<button id="listar">Mostrar Ocultar Usuarios Registrados</button>
+</form> -->
+
+</div>
+<div class="resultados">
+
+<div id="showCount">
+    <h2>Usuarios Registrados al momento: <span id="userCount"></span></h2>
+</div>
+<ul id="listUsersRegistered" display="block" class="animate__animated animate__fadeInUp"></ul>
+</main>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
